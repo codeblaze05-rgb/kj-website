@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="K.J Traders & Hardware - Premium wholesale cement, steel, and hardware supplier for industrial and residential projects.">
+    <meta name="keywords" content="cement supplier, steel supplier, hardware wholesale, construction materials">
+    <title>K.J Traders & Hardware | Wholesale Cement & Hardware Supplier</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#1F2937',
+                        'secondary': '#003399',
+                        'accent': '#FF8800',
+                        'background': '#FFFFFF',
+                        'surface': '#F9FAFB',
+                        'text-primary': '#111827',
+                        'text-secondary': '#6B7280',
+                        'border-color': '#E5E7EB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        marathi: ['Noto Sans Devanagari', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'lg': '12px',
+                        'xl': '16px',
+                        'xxl': '20px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: #111827;
+            background-color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body.marathi {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 15px -3px rgb(0 0 0 / 0.08);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            display: inline-flex;
+            gap: 8px;
+            background-color: #F3F4F6;
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .lang-btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            background-color: transparent;
+            color: #6B7280;
+        }
+
+        .lang-btn.active {
+            background-color: white;
+            color: #003399;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: #111827;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background-color: #111827;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            max-height: 500px;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #003399;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #002266;
+            box-shadow: 0 10px 25px -5px rgb(0 52 153 / 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #FF8800;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #E67300;
+            box-shadow: 0 10px 25px -5px rgb(255 136 0 / 0.2);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid #003399;
+            color: #003399;
+            background-color: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #003399;
+            color: white;
+        }
+
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 32px;
+            border: 1px solid #E5E7EB;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1);
+            transform: translateY(-4px);
+            border-color: #003399;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 48px;
+        }
+
+        .section-subtitle {
+            color: #FF8800;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: #6B7280;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            margin-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #003399 0%, #1F2937 100%);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+            opacity: 0.1;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #003399;
+            box-shadow: 0 0 0 3px rgba(0, 51, 153, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Stats */
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            color: #003399;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #6B7280;
+            font-weight: 600;
+        }
+
+        /* Feature Grid */
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background-color: rgba(0, 51, 153, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #003399;
+            font-size: 28px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .feature-icon {
+            background-color: #003399;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero {
+                min-height: 500px;
+                margin-top: 64px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="kj-traders-logo.png" alt="K.J Traders" class="h-14 w-auto">
+            </a>
+
+            <!-- Desktop Menu & Language Switcher -->
+            <div class="hidden md:flex items-center space-x-4">
+                <div class="flex items-center space-x-1">
+                    <a href="#about" class="nav-link px-4 py-2 text-text-secondary hover:text-text-primary font-500 transition-colors" data-en="About" data-mr="आमच्याबद्दल">About</a>
+                    <a href="#products" class="nav-link px-4 py-2 text-text-secondary hover:text-text-primary font-500 transition-colors" data-en="Products" data-mr="उत्पादने">Products</a>
+                    <a href="#features" class="nav-link px-4 py-2 text-text-secondary hover:text-text-primary font-500 transition-colors" data-en="Features" data-mr="वैशिष्ट्ये">Features</a>
+                    <a href="#contact" class="nav-link px-4 py-2 text-text-secondary hover:text-text-primary font-500 transition-colors" data-en="Contact" data-mr="संपर्क">Contact</a>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="mr">मराठी</button>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="hidden md:flex items-center space-x-3">
+                <a href="tel:09665442786" class="btn btn-outline" data-en="Call Now" data-mr="आता कॉल करा">Call Now</a>
+                <a href="#contact" class="btn btn-primary" data-en="Get Quote" data-mr="भाव मिळवा">Get Quote</a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <button class="md:hidden hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden border-t border-border-color" id="mobileMenu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="nav-link block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface rounded-lg transition-colors" data-en="About" data-mr="आमच्याबद्दल">About</a>
+                <a href="#products" class="nav-link block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface rounded-lg transition-colors" data-en="Products" data-mr="उत्पादने">Products</a>
+                <a href="#features" class="nav-link block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface rounded-lg transition-colors" data-en="Features" data-mr="वैशिष्ट्ये">Features</a>
+                <a href="#contact" class="nav-link block px-3 py-2 text-text-secondary hover:text-text-primary hover:bg-surface rounded-lg transition-colors" data-en="Contact" data-mr="संपर्क">Contact</a>
+                <div class="pt-3 space-y-2">
+                    <div class="lang-switcher px-3 mb-3 block">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="mr">मराठी</button>
+                    </div>
+                    <a href="tel:09665442786" class="block w-full text-center py-2 btn btn-outline" data-en="Call Now" data-mr="आता कॉल करा">Call Now</a>
+                    <a href="#contact" class="block w-full text-center btn btn-primary" data-en="Get Quote" data-mr="भाव मिळवा">Get Quote</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full hero-content">
+        <div class="max-w-2xl">
+            <h1 class="hero-title" data-en="Premium Hardware Solutions for Your Projects" data-mr="आपल्या प्रकल्पांसाठी प्रीमियम हार्डवेअर सोलिউशन">Premium Hardware Solutions for Your Projects</h1>
+            <p class="hero-desc" data-en="K.J Traders &amp; Hardware delivers high-quality cement, steel, and construction materials with reliable service to industrial and residential clients." data-mr="के.जे ट्रेडर्स अँड हार्डवेअर औद्योगिक आणि आवासीय ग्राहकांना उच्च-गुणवत्तेचे सिमेंट, स्टील आणि बांधकाम सामग्री विश्वसनीय सेवेसह वितरित करते.">K.J Traders & Hardware delivers high-quality cement, steel, and construction materials with reliable service to industrial and residential clients.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#products" class="btn btn-primary" data-en="Explore Our Products" data-mr="आमची उत्पादने एक्सप्लोर करा">Explore Our Products</a>
+                <a href="#contact" class="btn btn-outline text-white border-white hover:bg-white hover:text-primary" data-en="Get a Quote" data-mr="एक उद्धरण मिळवा">Get a Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="py-section-md bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label" data-en="Active Clients" data-mr="सक्रिय ग्राहक">Active Clients</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label" data-en="Years Experience" data-mr="वर्षांचा अनुभव">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label" data-en="Quality Guaranteed" data-mr="गुणवत्ता गारंटीकृत">Quality Guaranteed</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-section bg-background">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="section-header">
+                    <div class="section-subtitle" data-en="About Us" data-mr="आমच्याबद्दल">About Us</div>
+                    <h2 class="section-title" data-en="Trusted by Industry Leaders" data-mr="उद्योग नेत्यांद्वारे विश्वसनीय">Trusted by Industry Leaders</h2>
+                    <p class="section-description" data-en="K.J Traders &amp; Hardware has been a trusted supplier for over 15 years, providing premium-quality cement, steel, and construction materials to industrial and residential projects across Maharashtra." data-mr="के.जे ट्रेडर्स अँड हार्डवेअर 15 वर्षांपासून एक विश्वसनीय आपूर्तिकर्ता आहे, महाराष्ट्र जुडून औद्योगिक आणि आवासीय प्रकल्पांना प्रीमियम-गुणवत्तेचे सिमेंट, स्टील आणि बांधकाम सामग्री प्रदान करते.">K.J Traders & Hardware has been a trusted supplier for over 15 years, providing premium-quality cement, steel, and construction materials to industrial and residential projects across Maharashtra.</p>
+                </div>
+                <div class="space-y-4 mt-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="feature-icon mt-1">✓</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2" data-en="Premium Quality" data-mr="प्रीमियम गुणवत्ता">Premium Quality</h3>
+                            <p class="text-text-secondary" data-en="All products meet international standards and undergo rigorous quality checks." data-mr="सर्व उत्पादने आंतरराष्ट्रीय मानदंड पूरण करतात आणि कठोर गुणवत्ता तपासणीतून गुजरतात.">All products meet international standards and undergo rigorous quality checks.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="feature-icon mt-1">✓</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2" data-en="Reliable Delivery" data-mr="विश्वसनीय वितरण">Reliable Delivery</h3>
+                            <p class="text-text-secondary" data-en="On-time delivery and professional logistics management for your peace of mind." data-mr="वेळेवर वितरण आणि आपल्या मानसिक शांतीसाठी व्यावसायिक लॉजिस्टिक्स व्यवस्थापन.">On-time delivery and professional logistics management for your peace of mind.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="feature-icon mt-1">✓</div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2" data-en="Competitive Pricing" data-mr="प्रतिस्पर्धी मूल्य निर्धारण">Competitive Pricing</h3>
+                            <p class="text-text-secondary" data-en="Wholesale rates without compromising on quality or service standards." data-mr="गुणवत्ता किंवा सेवा मानदंडांसह समझौता न करता घाऊक दर.">Wholesale rates without compromising on quality or service standards.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-xl overflow-hidden shadow-hover">
+                <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop" alt="Construction materials" class="w-full h-96 object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section id="products" class="py-section bg-surface">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header">
+            <div class="section-subtitle" data-en="Our Catalog" data-mr="आमची संकेत">Our Catalog</div>
+            <h2 class="section-title" data-en="Core Products &amp; Services" data-mr="मुख्य उत्पादने आणि सेवा">Core Products & Services</h2>
+            <p class="section-description" data-en="Comprehensive range of premium materials for all your construction and industrial needs." data-mr="आपल्या सर्व बांधकाम आणि औद्योगिक गरजांसाठी प्रीमियम सामग्रीची व्यापक श्रेणी.">Comprehensive range of premium materials for all your construction and industrial needs.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Steel Card -->
+            <div class="card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-en="Steel" data-mr="स्टील">Steel</h3>
+                <p class="text-text-secondary leading-relaxed" data-en="High-grade structural and reinforced steel for industrial construction projects with certified strength." data-mr="औद्योगिक बांधकाम प्रकल्पांसाठी उच्च-ग्रेड संरचनात्मक आणि प्रबलित स्टील प्रमाणित शक्तीसह.">High-grade structural and reinforced steel for industrial construction projects with certified strength.</p>
+            </div>
+
+            <!-- Cement Card -->
+            <div class="card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">inventory_2</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-en="Cement" data-mr="सिमेंट">Cement</h3>
+                <p class="text-text-secondary leading-relaxed" data-en="Premium quality Portland cement meeting international standards for residential and commercial use." data-mr="आवासीय आणि व्यावसायिक वापरासाठी आंतरराष्ट्रीय मानदंड पूरण करणारी प्रीमियम गुणवत्तेचे पोर्टलँड सिमेंट.">Premium quality Portland cement meeting international standards for residential and commercial use.</p>
+            </div>
+
+            <!-- Hardware Card -->
+            <div class="card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">construction</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-en="Hardware" data-mr="हार्डवेअर">Hardware</h3>
+                <p class="text-text-secondary leading-relaxed" data-en="Complete range of tools, fasteners, and hardware items for professional contractors and builders." data-mr="व्यावसायिक ठेकेदार आणि बिल्डरांसाठी उपकरणे, फास्टनर्स आणि हार्डवेअर वस्तूंची संपूर्ण श्रेणी.">Complete range of tools, fasteners, and hardware items for professional contractors and builders.</p>
+            </div>
+
+            <!-- Materials Card -->
+            <div class="card">
+                <div class="feature-icon">
+                    <span class="material-symbols-outlined">plumbing</span>
+                </div>
+                <h3 class="text-xl font-bold mb-3" data-en="Materials" data-mr="सामग्री">Materials</h3>
+                <p class="text-text-secondary leading-relaxed" data-en="Comprehensive building materials solutions including pipes, aggregates, and finishing supplies." data-mr="पाइपस, मिश्रणे आणि फिनिशिंग पुरवठा यांसह व्यापक बांधकाम सामग्री समाधान.">Comprehensive building materials solutions including pipes, aggregates, and finishing supplies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section id="features" class="py-section bg-background">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="section-header">
+            <div class="section-subtitle" data-en="Why Choose Us" data-mr="आमची निवड का करा">Why Choose Us</div>
+            <h2 class="section-title" data-en="What Sets Us Apart" data-mr="आमच्याला अलग करणे काय">What Sets Us Apart</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">🏆</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Industry Certified" data-mr="उद्योग प्रमाणित">Industry Certified</h3>
+                <p class="text-text-secondary" data-en="All products are ISO certified and meet international quality standards." data-mr="सर्व उत्पादने आयएसओ प्रमाणित आहेत आणि आंतरराष्ट्रीय गुणवत्ता मानदंड पूरण करतात.">All products are ISO certified and meet international quality standards.</p>
+            </div>
+
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">🚚</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Fast Delivery" data-mr="जलद वितरण">Fast Delivery</h3>
+                <p class="text-text-secondary" data-en="Efficient logistics network ensures timely delivery across Maharashtra and beyond." data-mr="कुशल लॉजिस्टिक्स नेटवर्क महाराष्ट्र आणि त्यापलीकडे समयोचित वितरण सुनिश्चित करते.">Efficient logistics network ensures timely delivery across Maharashtra and beyond.</p>
+            </div>
+
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">💰</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Competitive Pricing" data-mr="प्रतिस्पर्धी मूल्य निर्धारण">Competitive Pricing</h3>
+                <p class="text-text-secondary" data-en="Wholesale rates with no hidden charges—transparent pricing for all clients." data-mr="कोणतेही लपलेले शुल्क नसलेले घाऊक दर - सर्व ग्राहकांसाठी पारदर्शक मूल्य निर्धारण.">Wholesale rates with no hidden charges—transparent pricing for all clients.</p>
+            </div>
+
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">👥</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Expert Support" data-mr="विशेषज्ञ समर्थन">Expert Support</h3>
+                <p class="text-text-secondary" data-en="Dedicated team of professionals ready to assist with your project needs." data-mr="आपल्या प्रकल्प आवश्यकतांसह मदत करण्यास तयार व्यावसायिकांची समर्पित टीम.">Dedicated team of professionals ready to assist with your project needs.</p>
+            </div>
+
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">📦</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Large Inventory" data-mr="मोठे मजुरपट">Large Inventory</h3>
+                <p class="text-text-secondary" data-en="Extensive stock of quality materials always available for immediate shipment." data-mr="गुणवत्तेचे सामग्री मोठ्या प्रमाणात नेहमी तत्काळ शिपमेंटसाठी उपलब्ध.">Extensive stock of quality materials always available for immediate shipment.</p>
+            </div>
+
+            <div class="card border-2 border-border-color">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-lg font-bold mb-3" data-en="Long-Term Partnership" data-mr="दीर्घकालीन भागीदारी">Long-Term Partnership</h3>
+                <p class="text-text-secondary" data-en="Build lasting relationships with flexible terms and customized solutions." data-mr="लचकदार शर्तीसह आणि अनुकूलित समाधानांसह दीर्घस्थायी संबंध तयार करा.">Build lasting relationships with flexible terms and customized solutions.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-section bg-primary text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Info -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8" data-en="Get in Touch" data-mr="संपर्कात रहा">Get in Touch</h2>
+                <p class="text-gray-300 mb-8 leading-relaxed" data-en="Have questions about our products or need a custom quote? Contact us today and our expert team will be happy to assist you." data-mr="आमच्या उत्पादनांबद्दल प्रश्न आहेत किंवा कस्टम उद्धरणास आवश्यकता आहे? आज आमच्याशी संपर्क करा आणि आमची तज्ञ टीम आपल्याला मदत करण्यास खुश असेल.">Have questions about our products or need a custom quote? Contact us today and our expert team will be happy to assist you.</p>
+
+                <div class="space-y-6">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📍</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2" data-en="Location" data-mr="स्थान">Location</h3>
+                            <a href="https://maps.google.com/maps?vet=10CAAQoqAOahcKEwiY8an_sYOUAxUAAAAAHQAAAAAQHA..i&rlz=1C1GCEA_en&sca_esv=92e4b11da69d1482&pvq=OhYweDA6MHhlYmNhMTRhYWUwZDE3MDYy&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=in&sa=X&ftid=0x3bc49f0403dcfb61:0xebca14aae0d17062" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
+                                <div class="contact-addr" data-en="Walved Rd, Swami Samarth Nagar" data-mr="वाल्वड रोड, स्वामी समर्थ नगर">Walved Rd, Swami Samarth Nagar</div>
+                                <div class="contact-city" data-en="Karjat, Maharashtra 414402" data-mr="कर्जत, महाराष्ट्र 414402">Karjat, Maharashtra 414402</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📞</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2" data-en="Phone" data-mr="फोन">Phone</h3>
+                            <a href="tel:09665442786" class="text-gray-300 hover:text-white transition-colors">+91 9665442786</a>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📧</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2" data-en="Email" data-mr="ईमेल">Email</h3>
+                            <a href="mailto:info@kjtraders.com" class="text-gray-300 hover:text-white transition-colors">info@kjtraders.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 pt-8 border-t border-gray-700">
+                    <h3 class="font-bold mb-4" data-en="Hours of Operation" data-mr="कार्य तास">Hours of Operation</h3>
+                    <div class="text-gray-300">
+                        <div class="hours" data-en="Monday - Friday: 9:00 AM - 6:00 PM" data-mr="सोमवार - शुक्रवार: 9:00 AM - 6:00 PM">Monday - Friday: 9:00 AM - 6:00 PM</div>
+                        <div class="hours" data-en="Saturday: 10:00 AM - 4:00 PM" data-mr="शनिवार: 10:00 AM - 4:00 PM">Saturday: 10:00 AM - 4:00 PM</div>
+                        <div class="hours" data-en="Sunday: Closed" data-mr="रविवार: बंद">Sunday: Closed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white bg-opacity-5 backdrop-blur-md p-8 rounded-xl border border-white border-opacity-10">
+                <form id="contactForm" class="space-y-4">
+                    <div class="form-group">
+                        <label for="name" class="text-white" data-en="Full Name" data-mr="पूर्ण नाव">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="आपले नाव / Your name" class="bg-white bg-opacity-10 text-white placeholder-gray-400 border-gray-600">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="text-white" data-en="Phone Number" data-mr="फोन नंबर">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="आपला फोन / Your phone" class="bg-white bg-opacity-10 text-white placeholder-gray-400 border-gray-600">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="text-white" data-en="Email Address" data-mr="ईमेल पत्ता">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="आपले ईमेल / Your email" class="bg-white bg-opacity-10 text-white placeholder-gray-400 border-gray-600">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="text-white" data-en="Subject" data-mr="विषय">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="विषय / Subject" class="bg-white bg-opacity-10 text-white placeholder-gray-400 border-gray-600">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="text-white" data-en="Message" data-mr="संदेश">Message</label>
+                        <textarea id="message" name="message" required placeholder="संदेश / Tell us more..." class="bg-white bg-opacity-10 text-white placeholder-gray-400 border-gray-600"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary w-full justify-center mt-6" data-en="Send Message" data-mr="संदेश पाठवा">Send Message</button>
+                </form>
+                <p class="text-gray-400 text-sm mt-4" data-en="We'll get back to you within 24 hours." data-mr="आम्ही 24 तासांमध्ये आपल्याशी संपर्क साधू.">We'll get back to you within 24 hours.</p>
+            </div>
+        </div>
+
+        <!-- Map -->
+        <div class="mt-16 rounded-xl overflow-hidden shadow-hover h-96">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.3547347947276!2d73.64176!3d18.78541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc49f0403dcfb61%3A0xebca14aae0d17062!2sWalved%20Rd%2C%20Swami%20Samarth%20Nagar%2C%20Karjat%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-gray-300 border-t border-gray-700">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
+            <div>
+                <h3 class="text-white font-bold text-lg mb-4">K.J Traders</h3>
+                <p class="text-gray-400 text-sm leading-relaxed" data-en="Premium wholesale cement, steel, and hardware supplier for industrial and residential projects since 2011." data-mr="2011 पासून औद्योगिक आणि आवासीय प्रकल्पांसाठी प्रीमियम घाऊक सिमेंट, स्टील आणि हार्डवेअर आपूर्तिकर्ता.">Premium wholesale cement, steel, and hardware supplier for industrial and residential projects since 2011.</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4" data-en="Products" data-mr="उत्पादने">Products</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#products" class="text-gray-400 hover:text-white transition-colors" data-en="Steel" data-mr="स्टील">Steel</a></li>
+                    <li><a href="#products" class="text-gray-400 hover:text-white transition-colors" data-en="Cement" data-mr="सिमेंट">Cement</a></li>
+                    <li><a href="#products" class="text-gray-400 hover:text-white transition-colors" data-en="Hardware" data-mr="हार्डवेअर">Hardware</a></li>
+                    <li><a href="#products" class="text-gray-400 hover:text-white transition-colors" data-en="Materials" data-mr="सामग्री">Materials</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4" data-en="Quick Links" data-mr="द्रुत लिंक">Quick Links</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a></li>
+                    <li><a href="#features" class="text-gray-400 hover:text-white transition-colors" data-en="Why Choose Us" data-mr="आमची निवड का करा">Why Choose Us</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors" data-en="Contact" data-mr="संपर्क">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-4" data-en="Contact Info" data-mr="संपर्क माहिती">Contact Info</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="tel:09665442786" class="text-gray-400 hover:text-white transition-colors">+91 9665442786</a></li>
+                    <li><a href="mailto:info@kjtraders.com" class="text-gray-400 hover:text-white transition-colors">info@kjtraders.com</a></li>
+                    <li class="text-gray-400" data-en="Karjat, Maharashtra" data-mr="कर्जत, महाराष्ट्र">Karjat, Maharashtra</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 py-8 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm" data-en="© 2026 K.J Traders & Hardware. All rights reserved." data-mr="© 2026 के.जे ट्रेडर्स अँड हार्डवेअर. सर्व अधिकार संरक्षित.">© 2026 K.J Traders & Hardware. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm" data-en="Privacy Policy" data-mr="गोपनीयता नीति">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors text-sm" data-en="Terms of Service" data-mr="सेवा के नियम">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Translation Dictionary
+    const translations = {
+        en: {
+            'About': 'About',
+            'Products': 'Products',
+            'Features': 'Features',
+            'Contact': 'Contact',
+            'Call Now': 'Call Now',
+            'Get Quote': 'Get Quote',
+            'Explore Our Products': 'Explore Our Products',
+            'Get a Quote': 'Get a Quote',
+            'Active Clients': 'Active Clients',
+            'Years Experience': 'Years Experience',
+            'Quality Guaranteed': 'Quality Guaranteed',
+        },
+        mr: {
+            'About': 'आमच्याबद्दल',
+            'Products': 'उत्पादने',
+            'Features': 'वैशिष्ट्ये',
+            'Contact': 'संपर्क',
+            'Call Now': 'आता कॉल करा',
+            'Get Quote': 'भाव मिळवा',
+            'Explore Our Products': 'आमची उत्पादने एक्सप्लोर करा',
+            'Get a Quote': 'एक उद्धरण मिळवा',
+            'Active Clients': 'सक्रिय ग्राहक',
+            'Years Experience': 'वर्षांचा अनुभव',
+            'Quality Guaranteed': 'गुणवत्ता गारंटीकृत',
+        }
+    };
+
+    let currentLang = localStorage.getItem('language') || 'en';
+
+    // Initialize language on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        setLanguage(currentLang);
+        setupLanguageSwitcher();
+        setupHamburgerMenu();
+        setupNavbarScroll();
+        setupContactForm();
+    });
+
+    function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('language', lang);
+        
+        // Update HTML lang attribute
+        document.getElementById('htmlRoot').lang = lang;
+        
+        // Update body class
+        if (lang === 'mr') {
+            document.body.classList.add('marathi');
+        } else {
+            document.body.classList.remove('marathi');
+        }
+
+        // Update all data attributes
+        document.querySelectorAll('[data-en][data-mr]').forEach(element => {
+            if (lang === 'mr') {
+                element.textContent = element.getAttribute('data-mr');
+            } else {
+                element.textContent = element.getAttribute('data-en');
+            }
+        });
+
+        // Update language switcher buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Close mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        mobileMenu.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+    }
+
+    function setupLanguageSwitcher() {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const lang = btn.getAttribute('data-lang');
+                setLanguage(lang);
+            });
+        });
+    }
+
+    function setupHamburgerMenu() {
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a:not(.lang-btn)');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
+
+    function setupNavbarScroll() {
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
+
+    function setupContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // WhatsApp message
+                const whatsappMessage = `Hello! I'm ${name}. ${subject}: ${message}. Phone: ${phone}, Email: ${email}`;
+                const whatsappURL = `https://wa.me/919665442786?text=${encodeURIComponent(whatsappMessage)}`;
+                
+                window.open(whatsappURL, '_blank');
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    }
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
